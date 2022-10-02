@@ -122,6 +122,7 @@ function App() {
   <input class="submit button" type="submit" value="Submit"  />
 
  <div id="result"></div>
+ <p> Your total cost for 60 kgs is 133500$!!!!</p>
  
 {/* 
   $(document).ready(function()
