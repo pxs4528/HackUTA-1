@@ -123,7 +123,7 @@ function App() {
 
  <div id="result"></div>
  
-
+{/* 
   $(document).ready(function()
   {
 
@@ -132,7 +132,7 @@ function App() {
    $("#result").html(parseInt($(".input").val())*2000);
    return false;
   })
- });
+ }); */}
     </div>
 
     
