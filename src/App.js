@@ -27,6 +27,18 @@ function App() {
   const [rocketName18, setrocketName18] = useState("");
   const [rocketName19, setrocketName19] = useState("");
   const [rocketName20, setrocketName20] = useState("");
+
+  const [value, setValue] = useState('');
+  const handleChange = event => {
+    const result = event.target.value.replace(/\D/g, '');
+
+    setValue(result);
+  };
+  console.log(value);
+  console.log(typeof value);
+  console.log(Number(value));
+  const [rocketimg, setrocketimg] = useState("");
+
   
   useEffect(() => {
     Axios.get("https://api.spacexdata.com/v4/payloads").then((res) => {
@@ -52,6 +64,9 @@ function App() {
     setrocketName18(res.data[18].name);
     setrocketName19(res.data[19].name);
     setrocketName20(res.data[20].name);
+    setrocketimg(res.data[0].name);
+
+
 
   })
 
@@ -86,14 +101,17 @@ function App() {
       <p>20 - {rocketName20}</p>
       <p>Enter the rocket capsule you want!!</p>
       <input
-      onKeyPress={(event) => {
-        if (!/[0-9]/.test(event.key)) {
-          event.preventDefault();
-        }
-      }}
-    />
-
+        type="text"
+        placeholder="Your fav number"
+        value={value}
+        onChange={handleChange}
+      />
+       <img
+        src= {rocketimg}
+      />
     </div>
+
+    
   );
 }
 
