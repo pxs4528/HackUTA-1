@@ -9,8 +9,8 @@ function App() {
   const [rocketName, setrocketName] = useState("");
   useEffect(() => {
     Axios.get("https://api.spacexdata.com/v4/payloads").then((res) => {
-    console.log(res.data.flight_number);
-    setrocketName(res.data.dragon);
+    console.log(res.data);
+    setrocketName(res.data[0].name);
   })
 
   }, []);
@@ -27,5 +27,3 @@ function App() {
 }
 
 export default App;
-// i can show how to push it in a branch here
-//
