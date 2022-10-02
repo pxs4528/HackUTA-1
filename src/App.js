@@ -129,7 +129,7 @@ function App() {
 
   $(".submit ").click(function()
   {
-   $("#result").html(parseInt($(".input").val())*5);
+   $("#result").html(parseInt($(".input").val())*2000);
    return false;
   })
  });
