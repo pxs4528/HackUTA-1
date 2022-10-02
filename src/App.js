@@ -76,7 +76,12 @@ function App() {
   
 
   return (
+    
     <div className="App">
+   <head>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+</head>
       <button>Generate rocket for me!</button>
       <p>0 -{rocketName}</p>
       <p>1 - {rocketName1}</p>
@@ -110,7 +115,24 @@ function App() {
         src= {rocketimg}
       />
 
-      <p></p>
+      <p>Cost of space travel is costly!! 
+        It's current estimate range from 1,400$ (Falcon Heavy) - 100,000$.
+      </p>
+      <input type="text" name="area" placeholder="Enter in square metres!" class="input" />
+  <input class="submit button" type="submit" value="Submit"  />
+
+ <div id="result"></div>
+ 
+
+  $(document).ready(function()
+  {
+
+  $(".submit ").click(function()
+  {
+   $("#result").html(parseInt($(".input").val())*5);
+   return false;
+  })
+ });
     </div>
 
     
